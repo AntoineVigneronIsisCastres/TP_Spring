@@ -1,0 +1,21 @@
+{
+    "configurations": [
+    {
+        "type": "java",
+        "name": "Launch Current File",
+        "request": "launch",
+        "mainClass": "${file}"
+    },
+        {
+            "type": "java",
+            "name": "Spring Boot-WebApp<cours-spring-jpa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "mainClass": "monprojet.WebApp",
+            "projectName": "cours-spring-jpa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
