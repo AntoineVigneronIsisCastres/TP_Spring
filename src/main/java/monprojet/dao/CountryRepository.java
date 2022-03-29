@@ -10,12 +10,4 @@ import monprojet.entity.Country;
 
 public interface CountryRepository extends JpaRepository<Country, Integer> {
 
-        /**
-     * Trouve une ville par son nom.
-     * Cette méthode sera automatiquement implémentée par Spring Data JPA.
-     * @param cityName
-     * @return La ville correspondant au nom fourni, ou null si pas trouvé.
-     */
-    public City findByName(String cityName);
-
 }
