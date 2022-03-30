@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: monprojet.dao.CityRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.752 s - in monprojet.dao.CityRepositoryTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.011 s <<< FAILURE! - in monprojet.dao.CityRepositoryTest
+onTrouveLePaysDesVilles  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository' defined in monprojet.dao.CountryRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)! Reason: Validation failed for query for method public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)!; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)!
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)! Reason: Validation failed for query for method public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)!; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)!
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List monprojet.dao.CountryRepository.populationDuPays(java.lang.String)!
+Caused by: java.lang.NullPointerException: Cannot read field "value" because "s1" is null
+

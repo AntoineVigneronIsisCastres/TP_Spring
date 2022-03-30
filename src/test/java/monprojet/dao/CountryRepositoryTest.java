@@ -7,6 +7,9 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.HashMap;
+import java.util.List;
+
 import monprojet.entity.*;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.jdbc.Sql;
@@ -49,6 +52,23 @@ public class CountryRepositoryTest {
         City paris = cityDAO.findByName("Paris");
         Country france = countryDAO.findById(1).orElseThrow();
         assertTrue( france.getCities().contains(paris), "France contient Paris");
+    }
+
+    @Test
+    void onCompteLaPopulationDuPays() {
+        log.info("On compte la population d'un pays");
+        List<Integer> population = countryDAO.populationDuPays("1");
+        assertEquals(population.get(0),12);
+    }
+
+    @Test
+    void onAfficheLaPopulationDeChaquePays(){
+        log.info("On affiche la population de chaqaue pays");
+        List<Integer> populations = countryDAO.populationDeChaquePays();
+        System.out.println(populations);
+        assertEquals(populations.get(0),12);
+        assertEquals(populations.get(1),18);
+        assertEquals(populations.get(2),27);
     }
 
 }
